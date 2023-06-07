@@ -12,7 +12,6 @@ private:
 	float gridPosY;
 	float stepSize;
 	sf::Clock clock;
-	sf::Time animationDelay;
 	void initPlayerTexture(std::string textureLink);
 	void initPlayerSprite(float pX, float pY);
 public:

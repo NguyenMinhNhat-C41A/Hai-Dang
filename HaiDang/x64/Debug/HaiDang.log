@@ -1,2 +1,36 @@
-﻿  LINK : C:\Users\toila\Documents\C++\HaiDang\HaiDang\x64\Debug\HaiDang.exe not found or not built by the last incremental link; performing full link
-  HaiDang.vcxproj -> C:\Users\toila\Documents\C++\HaiDang\HaiDang\x64\Debug\HaiDang.exe
+﻿  Player.cpp
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Player.cpp(20,62): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Player.cpp(21,62): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Player.cpp(64,51): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Player.cpp(64,35): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Player.cpp(69,51): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Player.cpp(69,35): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Player.cpp(81,18): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Player.cpp(82,24): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Player.cpp(84,63): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Player.cpp(91,18): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Player.cpp(92,24): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Player.cpp(95,63): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Player.cpp(102,18): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Player.cpp(103,37): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Player.cpp(106,63): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Player.cpp(112,18): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Player.cpp(113,37): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Player.cpp(116,63): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  HaiDang.vcxproj -> C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\x64\Debug\HaiDang.exe

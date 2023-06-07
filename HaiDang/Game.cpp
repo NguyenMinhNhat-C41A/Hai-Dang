@@ -2,7 +2,7 @@
 
 Game::Game() {
 	this->window = new Window();
-	this->player = new Player((float) ((this->window->getWindowLength() / 2) - 16), (float) ((this->window->getWindowWidth() / 2) - 16));
+	this->player = new Player((float)((this->window->getWindowLength() / 2) - 16), (float)((this->window->getWindowWidth() / 2) - 16));
 	this->world = new World();
 }
 
@@ -15,7 +15,7 @@ Game::~Game()
 
 void Game::run()
 {
-	while(this->window->getWindow()->isOpen()){
+	while (this->window->getWindow()->isOpen()) {
 		this->update();
 		this->render();
 	}
@@ -49,6 +49,7 @@ void Game::render()
 	this->window->getWindow()->clear();
 	this->world->renderWorld(*this->window->getWindow());
 	this->player->renderPlayer(*this->window->getWindow());
-	this->window->getWindow()-> display();
+
+	this->window->getWindow()->display();
 
 }
