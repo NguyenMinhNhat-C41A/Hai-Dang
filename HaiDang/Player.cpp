@@ -9,9 +9,16 @@ void Player::initPlayerTexture(std::string textureLink)
 	};
 }
 
+void Player::setPlayerTextureRect(int x, int y, int l, int w)
+{
+	this->playerTextureRect = sf::IntRect(x,y,l,w);
+	this->playerSprite.setTextureRect(this->playerTextureRect);
+ }
+
 void Player::initPlayerSprite(float pX, float pY)
 {
 	this->playerSprite.setTexture(this->playerTexture);
+	this->setPlayerTextureRect(0, 0, 32, 32);
 	this->playerSprite.setPosition(pX, pY);
 	sf::Rect<float> size = this->playerSprite.getGlobalBounds();
 
@@ -24,9 +31,10 @@ void Player::initPlayerSprite(float pX, float pY)
 
 Player::Player(float pX, float pY)
 {
-	this->initPlayerTexture("../img/Pl-T.png");
+	this->initPlayerTexture("../img/NguoiChoi/NgCh.png");
 	this->initPlayerSprite(pX, pY);
 	this->stepSize = 4.f;
+
 }
 
 sf::Vector2f Player::getPlayerGridPosition()
@@ -43,36 +51,23 @@ void Player::step(World world)
 	
 	}
 
-	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
 	{
 		this->stepRight(world);
 		std::cout << "x: " << this->gridPosX << ", y: " << this->gridPosY << std::endl;
 	}
 
-	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
 	{
 		this->stepUp(world);
 		std::cout << "x: " << this->gridPosX << ", y: " << this->gridPosY << std::endl;
 	}
 
-	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
 		this->stepDown(world);
 		std::cout << "x: " << this->gridPosX << ", y: " << this->gridPosY << std::endl;
 
 	}
-	else {
-		float tileX = world.getTile(this->gridPosX, this->gridPosY).getTileSprite().getPosition().x + 16;
-		if (tileX != this->playerSprite.getPosition().x) {
-			this->playerSprite.setPosition(tileX, this->playerSprite.getPosition().y);
-		};
-
-		float tileY = world.getTile(this->gridPosX, this->gridPosY).getTileSprite().getPosition().y + 16;
-		if (tileY != this->playerSprite.getPosition().y) {
-			this->playerSprite.setPosition(this->playerSprite.getPosition().x, tileY);
-		};
-	}
-
-
 
 }
 
@@ -117,6 +112,31 @@ void Player::stepRight(World world)
 	}
 }
 
+void Player::adjustPos(World world)
+{
+	float tileX = world.getTile(this->gridPosX, this->gridPosY).getTileSprite().getPosition().x + 16;
+	if (tileX != this->playerSprite.getPosition().x) {
+		this->playerSprite.setPosition(tileX, this->playerSprite.getPosition().y);
+	};
+
+	float tileY = world.getTile(this->gridPosX, this->gridPosY).getTileSprite().getPosition().y + 16;
+	if (tileY != this->playerSprite.getPosition().y) {
+		this->playerSprite.setPosition(this->playerSprite.getPosition().x, tileY);
+	};
+}
+
+void Player::animIdle()
+{
+	if (this->clock.getElapsedTime().asSeconds() > 2.f) {
+		this->setPlayerTextureRect((this->playerTextureRect.left + 32)%128, this->playerTextureRect.top, 32, 32);
+	}
+}
+
+void Player::animRun()
+{
+
+}
+
 void Player::renderPlayer(sf::RenderTarget& target)
 {
 	target.draw(this->playerSprite);
@@ -125,7 +145,12 @@ void Player::renderPlayer(sf::RenderTarget& target)
 
 void Player::playerUpdate(World world)
 {
+	this->animIdle();
 	this->step(world);
-
 }
 
+Animation::Animation(int x, int y, int w, int h, std::string textureLink)
+{
+
+
+}

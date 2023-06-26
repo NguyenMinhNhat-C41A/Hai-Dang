@@ -49,7 +49,6 @@ void Game::render()
 	this->window->getWindow()->clear();
 	this->world->renderWorld(*this->window->getWindow());
 	this->player->renderPlayer(*this->window->getWindow());
-
 	this->window->getWindow()->display();
 
 }
