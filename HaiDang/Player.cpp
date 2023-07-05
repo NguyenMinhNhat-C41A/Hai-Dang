@@ -35,6 +35,13 @@ Player::Player(float pX, float pY)
 	this->initPlayerSprite(pX, pY);
 	this->stepSize = 4.f;
 
+	anims[int(AnimIndex::Idle)] = Animation(0, 0, 32, 32, "../img/NguoiChoi/NgCh.png");
+	anims[int(AnimIndex::Up)] = Animation(0, 32, 32, 32, "../img/NguoiChoi/NgCh.png");
+	anims[int(AnimIndex::Left)] = Animation(0, 64, 32, 32, "../img/NguoiChoi/NgCh.png");
+	anims[int(AnimIndex::Down)] = Animation(0, 96, 32, 32, "../img/NguoiChoi/NgCh.png");
+	anims[int(AnimIndex::Right)] = Animation(0, 128, 32, 32, "../img/NguoiChoi/NgCh.png");
+	this->currentAnim = AnimIndex::Idle;
+	
 }
 
 sf::Vector2f Player::getPlayerGridPosition()
@@ -44,37 +51,42 @@ sf::Vector2f Player::getPlayerGridPosition()
 
 void Player::step(World world)
 {	
+	this->currentAnim = AnimIndex::Idle;
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
 	{
+		this->currentAnim = AnimIndex::Left;
 		this->stepLeft(world);
-		std::cout << "x: " << this->gridPosX << ", y: " << this->gridPosY << std::endl;
-	
+		//std::cout << "x: " << this->gridPosX << ", y: " << this->gridPosY << std::endl;
 	}
 
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
 	{
+		this->currentAnim = AnimIndex::Right;
 		this->stepRight(world);
-		std::cout << "x: " << this->gridPosX << ", y: " << this->gridPosY << std::endl;
+		//std::cout << "x: " << this->gridPosX << ", y: " << this->gridPosY << std::endl;
 	}
 
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
 	{
+		this->currentAnim = AnimIndex::Up;
 		this->stepUp(world);
-		std::cout << "x: " << this->gridPosX << ", y: " << this->gridPosY << std::endl;
+		//std::cout << "x: " << this->gridPosX << ", y: " << this->gridPosY << std::endl;
 	}
 
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
+		this->currentAnim = AnimIndex::Down;
 		this->stepDown(world);
-		std::cout << "x: " << this->gridPosX << ", y: " << this->gridPosY << std::endl;
+		//std::cout << "x: " << this->gridPosX << ", y: " << this->gridPosY << std::endl;
 
 	}
-
 }
 
 void Player::stepUp(World world)
-{
+{	
 	int newGridPosY = (this->playerSprite.getPosition().y - 16 - this->stepSize)/32;
-	if (world.getTile(this->gridPosX, newGridPosY).isTilePassable()) {
+	int newGridPosLeftX = (this->playerSprite.getPosition().x - 16) / 32;
+	int newGridPosRightX = (this->playerSprite.getPosition().x + 15) / 32;
+	if (world.getTile(newGridPosLeftX, newGridPosY).isTilePassable() && world.getTile(newGridPosRightX, newGridPosY).isTilePassable()) {
 		this->playerSprite.move(0.f, -this->stepSize);
 		this->gridPosY = (int)((this->playerSprite.getPosition().y) / 32);
 	}
@@ -84,8 +96,9 @@ void Player::stepUp(World world)
 void Player::stepDown(World world)
 {
 	int newGridPosY = (this->playerSprite.getPosition().y + 15 + this->stepSize) / 32;
-	if (world.getTile(this->gridPosX, newGridPosY).isTilePassable()) {
-
+	int newGridPosLeftX = (this->playerSprite.getPosition().x - 16) / 32;
+	int newGridPosRightX = (this->playerSprite.getPosition().x + 15) / 32;
+	if (world.getTile(newGridPosLeftX, newGridPosY).isTilePassable() && world.getTile(newGridPosRightX, newGridPosY).isTilePassable()) {
 		this->playerSprite.move(0.f, this->stepSize);
 		this->gridPosY = (int)((this->playerSprite.getPosition().y) / 32);
 
@@ -95,17 +108,24 @@ void Player::stepDown(World world)
 void Player::stepLeft(World world)
 {
 	int newGridPosX = (this->playerSprite.getPosition().x - 16 - this->stepSize) / 32;
-	if (world.getTile(newGridPosX, this->gridPosY).isTilePassable()) {
+	int newGridPosUpY = (this->playerSprite.getPosition().y -16) / 32;
+	int newGridPosDownY = (this->playerSprite.getPosition().y + 15) / 32;
+	if (world.getTile(newGridPosX, newGridPosUpY).isTilePassable() && world.getTile(newGridPosX, newGridPosDownY).isTilePassable()) {
 
 		this->playerSprite.move(-this->stepSize, 0.f);
 		this->gridPosX = (int)((this->playerSprite.getPosition().x) / 32);
+	}
+
+	else {
 	}
 }
 
 void Player::stepRight(World world)
 {
 	int newGridPosX = (this->playerSprite.getPosition().x + 15 + this->stepSize) / 32;
-	if (world.getTile(newGridPosX, this->gridPosY).isTilePassable()) {
+	int newGridPosUpY = (this->playerSprite.getPosition().y - 16) / 32;
+	int newGridPosDownY = (this->playerSprite.getPosition().y + 15) / 32;
+	if (world.getTile(newGridPosX, newGridPosUpY).isTilePassable() && world.getTile(newGridPosX, newGridPosDownY).isTilePassable()) {
 			
 		this->playerSprite.move(this->stepSize, 0.f);
 		this->gridPosX = (int)((this->playerSprite.getPosition().x) / 32);
@@ -125,17 +145,6 @@ void Player::adjustPos(World world)
 	};
 }
 
-void Player::animIdle()
-{
-	if (this->clock.getElapsedTime().asSeconds() > 2.f) {
-		this->setPlayerTextureRect((this->playerTextureRect.left + 32)%128, this->playerTextureRect.top, 32, 32);
-	}
-}
-
-void Player::animRun()
-{
-
-}
 
 void Player::renderPlayer(sf::RenderTarget& target)
 {
@@ -143,14 +152,47 @@ void Player::renderPlayer(sf::RenderTarget& target)
 }
 
 
-void Player::playerUpdate(World world)
+void Player::playerUpdate(World world, float dt)
 {
-	this->animIdle();
 	this->step(world);
+	anims[int(this->currentAnim)].update(dt);
+	anims[int(this->currentAnim)].setToSprite(this->playerSprite);
 }
 
 Animation::Animation(int x, int y, int w, int h, std::string textureLink)
 {
+	if (!this->texture.loadFromFile(textureLink)) {
+		std::cout << "Failed load: Animation Texture" << std::endl;
+		system("pause");
+	};
+	for (int i = 0; i < this->numFrames; i++) {
+		frames[i] = {x + i * w, y, w, h};
+	}
 
+}
 
+void Animation::setToSprite(sf::Sprite& s) const
+{	
+	s.setTexture(this->texture);
+	s.setTextureRect(this->frames[this->frameIndex]);	
+}
+
+void Animation::update(float dt)
+{
+	
+	this->time += dt;
+	//std::cout << "time: " << this->time << std::endl;
+	while (time >= animDelay) {
+		time -= animDelay;
+		//std::cout << "time-AS: " << this->time << std::endl;
+		this->advance();
+	}
+}
+
+void Animation::advance()
+{
+
+	if (++frameIndex >= numFrames) {
+		frameIndex = 0;
+	}
 }

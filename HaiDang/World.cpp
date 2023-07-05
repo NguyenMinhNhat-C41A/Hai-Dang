@@ -26,15 +26,19 @@ void World::initTiles()
 		std::vector<WorldTile*> row;
 		for (int j = 1; j <= 50; j++) {
 			if (i == 1 || i == 30) {
-				row.push_back(new WorldTile(posX, posY, "../img/Test-wall.png", false, false));
+				row.push_back(new WorldTile(posX, posY, "../img/OTheGioi/Tuong.png", false, false));
 			}
 			else {
 				if (j == 1 || j == 50) {
-					row.push_back(new WorldTile(posX, posY, "../img/Test-wall.png", false, false));
+					row.push_back(new WorldTile(posX, posY, "../img/OTheGioi/Tuong.png", false, false));
 				}
 				else {
-					row.push_back(new WorldTile(posX, posY, "../img/Test-ground.png", true, false));
-
+					if(i >= 4 && i <= 20 && j >=4 && j <= 20) {
+						row.push_back(new WorldTile(posX, posY, "../img/OTheGioi/Nuoc.png", false, false));
+					}
+					else {
+						row.push_back(new WorldTile(posX, posY, "../img/OTheGioi/Co.png", true, false));
+					}
 				}
 			}
 			posX += 32;
@@ -42,11 +46,11 @@ void World::initTiles()
 		this->tiles.push_back(row);
 		posY += 32;
 	}
-	std::cout << this->tiles.size() << std::endl;
+	//std::cout << this->tiles.size() << std::endl;
 
 	for (int i = 0; i < this->tiles.size(); i++) {
-		std::cout << "i: " << i << std::endl;
-		std::cout << this->tiles.at(i).size() << std::endl;
+		//std::cout << "i: " << i << std::endl;
+		//std::cout << this->tiles.at(i).size() << std::endl;
 		
 	}
 }

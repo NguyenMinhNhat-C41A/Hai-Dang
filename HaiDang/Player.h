@@ -6,14 +6,19 @@
 
 class Animation {
 	public:
+		Animation() = default;
 		Animation(int x, int y, int w, int h, std::string textureLink);
+		void setToSprite(sf::Sprite& s) const;
+		void update(float dt);
 	private:
-		static constexpr int NumFrames = 4;
-		static constexpr float animDelay = 0.5f;
+		static constexpr int numFrames = 4;
+		static constexpr float animDelay = 0.1f;
 		sf::Texture texture;
-		sf::IntRect frames[NumFrames];
+		sf::IntRect frames[numFrames];
 		int frameIndex = 0;
 		float time = 0.0f;
+
+		void advance();
 };
 class Player {
 private:
@@ -23,12 +28,16 @@ private:
 	float gridPosX;
 	float gridPosY;
 	float stepSize;
-	bool isPosAdjusted;
-	bool moveUp;
-	bool moveDown;
-	bool moveLeft;
-	bool moveRight;
-	sf::Clock clock;
+	enum class AnimIndex {
+		Idle,
+		Up,
+		Left,
+		Down,
+		Right,
+		Count
+	};
+	Animation anims[int(AnimIndex::Count)];
+	AnimIndex currentAnim;
 	void initPlayerTexture(std::string textureLink);
 	void setPlayerTextureRect(int x, int y, int l, int w);
 	void initPlayerSprite(float pX, float pY);
@@ -42,9 +51,8 @@ public:
 	void stepLeft(World world);
 	void stepRight(World world);
 	void adjustPos(World world);
-	void animIdle();
-	void animRun();
+
 
 	void renderPlayer(sf::RenderTarget& target);
-	void playerUpdate(World world);
+	void playerUpdate(World world, float dt);
 };

@@ -1,36 +1,72 @@
 ﻿  Player.cpp
 C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Player.cpp(27,62): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Player.cpp(28,62): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Player.cpp(76,18): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Player.cpp(77,24): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Player.cpp(79,63): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Player.cpp(86,18): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Player.cpp(87,24): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Player.cpp(90,63): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Player.cpp(97,18): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Player.cpp(87,22): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Player.cpp(98,37): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Player.cpp(101,63): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Player.cpp(107,18): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Player.cpp(88,23): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Player.cpp(108,37): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Player.cpp(111,63): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Player.cpp(117,50): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Player.cpp(117,34): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Player.cpp(122,50): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Player.cpp(122,34): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Player.cpp(91,63): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Player.cpp(98,18): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Player.cpp(99,22): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Player.cpp(100,23): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Player.cpp(103,63): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Player.cpp(110,18): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Player.cpp(111,20): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Player.cpp(112,22): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Player.cpp(116,63): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Player.cpp(125,18): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Player.cpp(126,20): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Player.cpp(127,22): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Player.cpp(131,63): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Player.cpp(137,50): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Player.cpp(137,34): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Player.cpp(142,50): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Player.cpp(142,34): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
   HaiDang.vcxproj -> C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\x64\Debug\HaiDang.exe

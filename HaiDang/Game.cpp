@@ -15,32 +15,40 @@ Game::~Game()
 
 void Game::run()
 {
+	auto tp = std::chrono::steady_clock::now();
 	while (this->window->getWindow()->isOpen()) {
-		this->update();
+		sf::Event windowEvent;
+		while (this->window->getWindow()->pollEvent(windowEvent)) {
+
+			switch (windowEvent.type)
+			{
+			case sf::Event::Closed:
+				this->window->getWindow()->close();
+				break;
+
+			case sf::Event::KeyPressed:
+				if (windowEvent.key.code == sf::Keyboard::Escape) {
+					this->window->getWindow()->close();
+				}
+				break;
+
+			}
+		}
+		float dt;
+		{
+			const auto new_tp = std::chrono::steady_clock::now();
+			dt = std::chrono::duration<float>(new_tp - tp).count();
+			tp = new_tp;
+		}
+		this->player->playerUpdate(*world, dt);
 		this->render();
 	}
+
 }
 
 void Game::update()
 {
-	sf::Event windowEvent;
-	while (this->window->getWindow()->pollEvent(windowEvent)) {
-
-		switch (windowEvent.type)
-		{
-		case sf::Event::Closed:
-			this->window->getWindow()->close();
-			break;
-
-		case sf::Event::KeyPressed:
-			if (windowEvent.key.code == sf::Keyboard::Escape) {
-				this->window->getWindow()->close();
-			}
-			break;
-
-		}
-	}
-	this->player->playerUpdate(*world);
+	
 
 }
 
