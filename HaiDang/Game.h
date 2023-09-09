@@ -10,6 +10,7 @@ private:
 	Window* window;
 	Player* player;
 	World* world;
+
 public:
 
 	Game();

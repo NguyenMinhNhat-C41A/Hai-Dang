@@ -11,7 +11,7 @@ private:
 	std::vector<std::vector<WorldTile*>> tiles;
 	sf::Vector2i exitPos;
 	std::vector<sf::Vector2i> enemyPositions;
-	//l: 32, w: 18
+	const int tileSize = 32;
 	int gridLength;
 	
 	void initState();

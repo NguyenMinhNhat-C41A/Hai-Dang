@@ -17,18 +17,30 @@ void WorldTile::initTileTexture(std::string tileTexture)
 	};
 }
 
+void WorldTile::setTileTextureRect(int x, int y, int l, int w)
+{
+	this->tileTextureRect = sf::IntRect(x, y, l, w);
+	this->tileSprite.setTextureRect(this->tileTextureRect);
+}
+
 void WorldTile::initTileSprite(std::string tileTexture)
 {
 	this->initTileTexture(tileTexture);
-	this->tileTexture.setSmooth(true);
+	//this->tileTexture.setSmooth(true);
 	this->tileSprite.setTexture(this->tileTexture);
-	tileSprite.setTextureRect(sf::IntRect(0, 0, 32, 32));
-
+	this->setTileTextureRect(0,0,32,32);
+	sf::Rect<float> size = this->tileSprite.getGlobalBounds();
+	this->tileSprite.setOrigin(sf::Vector2f(size.width / 2, size.height / 2));
 }
 
 sf::Sprite WorldTile::getTileSprite()
 {
 	return this->tileSprite;
+}
+
+int WorldTile::getTileSize()
+{
+	return this->tileSize;
 }
 
 bool WorldTile::isTilePassable()

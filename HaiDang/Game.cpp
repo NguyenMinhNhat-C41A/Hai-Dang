@@ -15,6 +15,9 @@ Game::~Game()
 
 void Game::run()
 {
+	sf::Clock clock;
+	float dtFRIM;
+
 	auto tp = std::chrono::steady_clock::now();
 	while (this->window->getWindow()->isOpen()) {
 		sf::Event windowEvent;
@@ -40,7 +43,8 @@ void Game::run()
 			dt = std::chrono::duration<float>(new_tp - tp).count();
 			tp = new_tp;
 		}
-		this->player->playerUpdate(*world, dt);
+		dtFRIM = clock.restart().asSeconds();
+		this->player->playerUpdate(*world, dt, roundf(dtFRIM * 100) / 100);
 		this->render();
 	}
 

@@ -20,9 +20,9 @@ void World::initEnemyPositions()
 void World::initTiles()
 {
 	this->tiles.clear();
-	int posY = 0;
+	int posY = 16;
 	for (int i = 1; i <= 30; i++) {
-		int posX = 0;
+		int posX = this->tileSize / 2;
 		std::vector<WorldTile*> row;
 		for (int j = 1; j <= 50; j++) {
 			if (i == 1 || i == 30) {
@@ -33,7 +33,7 @@ void World::initTiles()
 					row.push_back(new WorldTile(posX, posY, "../img/OTheGioi/Tuong.png", false, false));
 				}
 				else {
-					if(i >= 4 && i <= 20 && j >=4 && j <= 20) {
+					if(i >= 3 && i <= 20 && j >=3 && j <= 20) {
 						row.push_back(new WorldTile(posX, posY, "../img/OTheGioi/Nuoc.png", false, false));
 					}
 					else {
@@ -41,10 +41,10 @@ void World::initTiles()
 					}
 				}
 			}
-			posX += 32;
+			posX += this->tileSize;
 		}
 		this->tiles.push_back(row);
-		posY += 32;
+		posY += this->tileSize;
 	}
 	//std::cout << this->tiles.size() << std::endl;
 

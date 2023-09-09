@@ -4,10 +4,10 @@
 #include "World.h"
 #include "Window.h"
 
-class Animation {
+class PlayerAnimation {
 	public:
-		Animation() = default;
-		Animation(int x, int y, int w, int h, std::string textureLink);
+		PlayerAnimation() = default;
+		PlayerAnimation(int x, int y, int w, int h, std::string textureLink);
 		void setToSprite(sf::Sprite& s) const;
 		void update(float dt);
 	private:
@@ -28,6 +28,7 @@ private:
 	float gridPosX;
 	float gridPosY;
 	float stepSize;
+	int stepMultiplayer;
 	enum class AnimIndex {
 		Idle,
 		Up,
@@ -36,7 +37,7 @@ private:
 		Right,
 		Count
 	};
-	Animation anims[int(AnimIndex::Count)];
+	PlayerAnimation anims[int(AnimIndex::Count)];
 	AnimIndex currentAnim;
 	void initPlayerTexture(std::string textureLink);
 	void setPlayerTextureRect(int x, int y, int l, int w);
@@ -45,14 +46,12 @@ private:
 public:
 	Player(float pX, float pY);
 	sf::Vector2f getPlayerGridPosition();
-	void step(World world);
-	void stepUp(World world);
-	void stepDown(World world);
-	void stepLeft(World world);
-	void stepRight(World world);
-	void adjustPos(World world);
-
+	void step(World world, float dtFRIM);
+	void stepUp(World world, float dtFRIM);
+	void stepDown(World world, float dtFRIM);
+	void stepLeft(World world, float dtFRIM);
+	void stepRight(World world, float dtFRIM);
 
 	void renderPlayer(sf::RenderTarget& target);
-	void playerUpdate(World world, float dt);
+	void playerUpdate(World world, float dt, float dtFRIM);
 };
