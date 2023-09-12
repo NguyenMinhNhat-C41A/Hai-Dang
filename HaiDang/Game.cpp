@@ -3,6 +3,8 @@
 Game::Game() {
 	this->window = new Window();
 	this->player = new Player((float)((this->window->getWindowLength() / 2) - 16), (float)((this->window->getWindowWidth() / 2) - 16));
+	//this->enemies.push_back(new Enemy((float)((this->window->getWindowLength() / 2) + 16), (float)((this->window->getWindowWidth() / 2) + 16), 32, 32, "../img/QuaiVat/Q-1.png"));
+	this->enemy = new Enemy((float)((this->window->getWindowLength() / 2) + 16), (float)((this->window->getWindowWidth() / 2) + 16), 32, 32, "../img/QuaiVat/Q-1.png");
 	this->world = new World();
 }
 
@@ -10,6 +12,7 @@ Game::~Game()
 {
 	delete this->window;
 	delete this->player;
+	delete this->enemy;
 	delete this->world;
 }
 
@@ -45,6 +48,7 @@ void Game::run()
 		}
 		dtFRIM = clock.restart().asSeconds();
 		this->player->playerUpdate(*world, dt, roundf(dtFRIM * 100) / 100);
+		this->enemy->EnemyUpdate(*world, *player, dt, roundf(dtFRIM * 100) / 100);
 		this->render();
 	}
 
@@ -61,6 +65,7 @@ void Game::render()
 	this->window->getWindow()->clear();
 	this->world->renderWorld(*this->window->getWindow());
 	this->player->renderPlayer(*this->window->getWindow());
+	this->enemy->renderEnemy(*this->window->getWindow());
 	this->window->getWindow()->display();
 
 }

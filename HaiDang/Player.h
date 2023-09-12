@@ -43,14 +43,16 @@ private:
 	void setPlayerTextureRect(int x, int y, int l, int w);
 	void initPlayerSprite(float pX, float pY);
 	
-public:
-	Player(float pX, float pY);
 	sf::Vector2f getPlayerGridPosition();
 	void step(World world, float dtFRIM);
 	void stepUp(World world, float dtFRIM);
 	void stepDown(World world, float dtFRIM);
 	void stepLeft(World world, float dtFRIM);
 	void stepRight(World world, float dtFRIM);
+
+public:
+	Player(float pX, float pY);
+	sf::Vector2f getPlayerPos();
 
 	void renderPlayer(sf::RenderTarget& target);
 	void playerUpdate(World world, float dt, float dtFRIM);

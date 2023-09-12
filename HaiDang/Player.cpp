@@ -44,6 +44,11 @@ Player::Player(float pX, float pY)
 	
 }
 
+sf::Vector2f Player::getPlayerPos()
+{
+	return this->playerSprite.getPosition();
+}
+
 sf::Vector2f Player::getPlayerGridPosition()
 {
 	return sf::Vector2f(this->gridPosX, this->gridPosY);
@@ -85,17 +90,18 @@ void Player::step(World world, float dtFRIM)
 
 void Player::stepUp(World world, float dtFRIM)
 {	
-	int temp = (int)(this->stepSize * dtFRIM * this->stepMultiplayer);
-	int newGridPosY = (this->playerSprite.getPosition().y - (this->playerTextureRect.width / 2) - temp)/32;
-	int newGridPosLeftX = (this->playerSprite.getPosition().x - (this->playerTextureRect.width / 2)) / 32;
-	int newGridPosRightX = (this->playerSprite.getPosition().x + ((this->playerTextureRect.width / 2) - 1)) / 32;
-	bool check1 = world.getTile(newGridPosLeftX, newGridPosY).isTilePassable();
-	bool check2 = world.getTile(newGridPosRightX, newGridPosY).isTilePassable();
+	const int temp = (int)(this->stepSize * dtFRIM * this->stepMultiplayer);
+	const int newGridPosY = (this->playerSprite.getPosition().y - (this->playerTextureRect.width / 2) - temp)/32;
+	const int newGridPosLeftX = (this->playerSprite.getPosition().x - (this->playerTextureRect.width / 2)) / 32;
+	const int newGridPosRightX = (this->playerSprite.getPosition().x + ((this->playerTextureRect.width / 2) - 1)) / 32;
+	
+	const bool passCheck1 = world.getTile(newGridPosLeftX, newGridPosY).isTilePassable();
+	const bool passCheck2 = world.getTile(newGridPosRightX, newGridPosY).isTilePassable();
 
 	/*std::cout << "Check1 - Pass: " << check1 << " - Pos: x = " << world.getTile(newGridPosLeftX, newGridPosY).getTileSprite().getPosition().x << ",y =  " << world.getTile(newGridPosLeftX, newGridPosY).getTileSprite().getPosition().y << std::endl;
 	std::cout << "Check2 - Pass: " << check2 << " - Pos: x = " << world.getTile(newGridPosRightX, newGridPosY).getTileSprite().getPosition().x << ",y =  " << world.getTile(newGridPosRightX, newGridPosY).getTileSprite().getPosition().y << std::endl;*/
 
-	if (world.getTile(newGridPosLeftX, newGridPosY).isTilePassable() && world.getTile(newGridPosRightX, newGridPosY).isTilePassable()) {
+	if (passCheck1 && passCheck2) {
 		this->playerSprite.move(0.f, -temp);
 	}
 	else {
@@ -107,19 +113,19 @@ void Player::stepUp(World world, float dtFRIM)
 
 void Player::stepDown(World world, float dtFRIM)
 {
-	int temp = (int)(this->stepSize * dtFRIM * this->stepMultiplayer);
-	int newGridPosY = (this->playerSprite.getPosition().y + ((this->playerTextureRect.width / 2) - 1) + temp) / 32;
-	int newGridPosLeftX = (this->playerSprite.getPosition().x - (this->playerTextureRect.width / 2)) / 32;
-	int newGridPosRightX = (this->playerSprite.getPosition().x + ((this->playerTextureRect.width / 2) - 1)) / 32;
-	bool check1 = world.getTile(newGridPosLeftX, newGridPosY).isTilePassable();
-	bool check2 = world.getTile(newGridPosRightX, newGridPosY).isTilePassable();
+	const int temp = (int)(this->stepSize * dtFRIM * this->stepMultiplayer);
+	const int newGridPosY = (this->playerSprite.getPosition().y + ((this->playerTextureRect.width / 2) - 1) + temp) / 32;
+	const int newGridPosLeftX = (this->playerSprite.getPosition().x - (this->playerTextureRect.width / 2)) / 32;
+	const int newGridPosRightX = (this->playerSprite.getPosition().x + ((this->playerTextureRect.width / 2) - 1)) / 32;
+	
+	const bool passCheck1 = world.getTile(newGridPosLeftX, newGridPosY).isTilePassable();
+	const bool passCheck2 = world.getTile(newGridPosRightX, newGridPosY).isTilePassable();
 
 	/*std::cout << "Check1 - Pass: " << check1 << " - Pos: x = " << world.getTile(newGridPosLeftX, newGridPosY).getTileSprite().getPosition().x << ",y =  " << world.getTile(newGridPosLeftX, newGridPosY).getTileSprite().getPosition().y << std::endl;
 	std::cout << "Check2 - Pass: " << check2 << " - Pos: x = " << world.getTile(newGridPosRightX, newGridPosY).getTileSprite().getPosition().x << ",y =  " << world.getTile(newGridPosRightX, newGridPosY).getTileSprite().getPosition().y << std::endl;*/
 
-	if (world.getTile(newGridPosLeftX, newGridPosY).isTilePassable() && world.getTile(newGridPosRightX, newGridPosY).isTilePassable()) {
+	if (passCheck1 && passCheck2) {
 		this->playerSprite.move(0.f, temp);
-		this->gridPosY = (int)((this->playerSprite.getPosition().y) / 32);
 	}
 
 	else {
@@ -132,18 +138,18 @@ void Player::stepDown(World world, float dtFRIM)
 
 void Player::stepLeft(World world, float dtFRIM)
 {
-	int temp = (int)(this->stepSize * dtFRIM * this->stepMultiplayer);
-	int newGridPosX = (this->playerSprite.getPosition().x - (this->playerTextureRect.width / 2) - temp) / 32;
-	int newGridPosUpY = (this->playerSprite.getPosition().y - (this->playerTextureRect.width / 2)) / 32;
-	int newGridPosDownY = (this->playerSprite.getPosition().y + ((this->playerTextureRect.width / 2) - 1)) / 32;
+	const int temp = (int)(this->stepSize * dtFRIM * this->stepMultiplayer);
+	const int newGridPosX = (this->playerSprite.getPosition().x - (this->playerTextureRect.width / 2) - temp) / 32;
+	const int newGridPosUpY = (this->playerSprite.getPosition().y - (this->playerTextureRect.width / 2)) / 32;
+	const int newGridPosDownY = (this->playerSprite.getPosition().y + ((this->playerTextureRect.width / 2) - 1)) / 32;
 
-	bool check1 = world.getTile(newGridPosX, newGridPosUpY).isTilePassable();
-	bool check2 = world.getTile(newGridPosX, newGridPosDownY).isTilePassable();
+	const bool passCheck1 = world.getTile(newGridPosX, newGridPosUpY).isTilePassable();
+	const bool passCheck2 = world.getTile(newGridPosX, newGridPosDownY).isTilePassable();
 
 	/*std::cout << "Check1 - Pass: " << check1 << " - Pos: x = " << world.getTile(newGridPosX, newGridPosUpY).getTileSprite().getPosition().x << ",y =  " << world.getTile(newGridPosX, newGridPosUpY).getTileSprite().getPosition().y << std::endl;
 	std::cout << "Check2 - Pass: " << check2 << " - Pos: x = " << world.getTile(newGridPosX, newGridPosDownY).getTileSprite().getPosition().x << ",y =  " << world.getTile(newGridPosX, newGridPosDownY).getTileSprite().getPosition().y << std::endl;*/
 
-	if (world.getTile(newGridPosX, newGridPosUpY).isTilePassable() && world.getTile(newGridPosX, newGridPosDownY).isTilePassable()) {
+	if (passCheck1 && passCheck2) {
 		this->playerSprite.move(-temp, 0.f);
 	}
 	else {
@@ -156,18 +162,18 @@ void Player::stepLeft(World world, float dtFRIM)
 
 void Player::stepRight(World world, float dtFRIM)
 {
-	int temp = (int)(this->stepSize * dtFRIM * this->stepMultiplayer);
-	int newGridPosX = (this->playerSprite.getPosition().x + ((this->playerTextureRect.width / 2) - 1) + temp) / 32;
-	int newGridPosUpY = (this->playerSprite.getPosition().y - (this->playerTextureRect.width / 2)) / 32;
-	int newGridPosDownY = (this->playerSprite.getPosition().y + ((this->playerTextureRect.width / 2) - 1)) / 32;
+	const int temp = (int)(this->stepSize * dtFRIM * this->stepMultiplayer);
+	const int newGridPosX = (this->playerSprite.getPosition().x + ((this->playerTextureRect.width / 2) - 1) + temp) / 32;
+	const int newGridPosUpY = (this->playerSprite.getPosition().y - (this->playerTextureRect.width / 2)) / 32;
+	const int newGridPosDownY = (this->playerSprite.getPosition().y + ((this->playerTextureRect.width / 2) - 1)) / 32;
 	
-	bool check1 = world.getTile(newGridPosX, newGridPosUpY).isTilePassable();
-	bool check2 = world.getTile(newGridPosX, newGridPosDownY).isTilePassable();
+	const bool passCheck1 = world.getTile(newGridPosX, newGridPosUpY).isTilePassable();
+	const bool passCheck2 = world.getTile(newGridPosX, newGridPosDownY).isTilePassable();
 
 	/*std::cout << "Check1 - Pass: " << check1 << " - Pos: x = " << world.getTile(newGridPosX, newGridPosUpY).getTileSprite().getPosition().x << ",y =  " << world.getTile(newGridPosX, newGridPosUpY).getTileSprite().getPosition().y << std::endl;
 	std::cout << "Check2 - Pass: " << check2 << " - Pos: x = " << world.getTile(newGridPosX, newGridPosDownY).getTileSprite().getPosition().x << ",y =  " << world.getTile(newGridPosX, newGridPosDownY).getTileSprite().getPosition().y << std::endl;*/
 
-	if (world.getTile(newGridPosX, newGridPosUpY).isTilePassable() && world.getTile(newGridPosX, newGridPosDownY).isTilePassable()) {
+	if (passCheck1 && passCheck2) {
 		this->playerSprite.move(temp, 0.f);
 	}
 
@@ -201,7 +207,6 @@ PlayerAnimation::PlayerAnimation(int x, int y, int w, int h, std::string texture
 	for (int i = 0; i < this->numFrames; i++) {
 		frames[i] = {x + i * w, y, w, h};
 	}
-
 }
 
 void PlayerAnimation::setToSprite(sf::Sprite& s) const

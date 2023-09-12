@@ -2,6 +2,9 @@
 #pragma once
 #include "SFML/Network.hpp"//Game Engine Classs
 #include "SFML/Graphics.hpp"
+#include <cmath>
+
+#include "Player.h"
 #include "World.h"
 #include "Window.h"
 
@@ -27,10 +30,15 @@ private:
 	sf::Sprite enemySprite;
 	sf::Texture enemyTexture;
 	sf::IntRect enemyTextureRect;
+
 	float gridPosX;
 	float gridPosY;
+	
 	float stepSize;
 	int stepMultiplayer;
+	int stepDirection;
+	int stepNums;
+
 	enum class AnimIndex {
 		Idle,
 		Up,
@@ -39,21 +47,28 @@ private:
 		Right,
 		Count
 	};
+
 	EnemyAnimation anims[int(AnimIndex::Count)];
 	AnimIndex currentAnim;
+
 	void initEnemyTexture(std::string textureLink);
 	void setEnemyTextureRect(int x, int y, int l, int w);
 	void initEnemySprite(float pX, float pY, int l, int w);
+	
+	void step(World world, Player player, float dtFRIM);
+	void stepUp(World world, Player player, float dtFRIM);
+	void stepDown(World world, Player player, float dtFRIM);
+	void stepLeft(World world, Player player, float dtFRIM);
+	void stepRight(World world, Player player, float dtFRIM);
+	void stepNumsReset();
+
+	void findPathToPlayer(Player player);
+	void moveAwayFromObstacles();
 
 public:
 	Enemy(float pX, float pY, int l, int w, std::string textureLink);
 	sf::Vector2f getEnemyGridPosition();
-	void step(World world, float dtFRIM);
-	void stepUp(World world, float dtFRIM);
-	void stepDown(World world, float dtFRIM);
-	void stepLeft(World world, float dtFRIM);
-	void stepRight(World world, float dtFRIM);
 
 	void renderEnemy(sf::RenderTarget& target);
-	void EnemyUpdate(World world, float dt, float dtFRIM);
+	void EnemyUpdate(World world, Player player, float dt, float dtFRIM);
 };

@@ -1,4 +1,144 @@
 ﻿  Enemy.cpp
 C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Enemy.cpp(25,61): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
 C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Enemy.cpp(26,61): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Enemy.cpp(178,106): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Enemy.cpp(178,24): warning C4244: 'initializing': conversion from 'T' to 'const int', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Enemy.cpp(179,103): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Enemy.cpp(179,28): warning C4244: 'initializing': conversion from 'T' to 'const int', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Enemy.cpp(180,110): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Enemy.cpp(180,29): warning C4244: 'initializing': conversion from 'T' to 'const int', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Enemy.cpp(186,31): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Enemy.cpp(189,61): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Enemy.cpp(189,45): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Enemy.cpp(190,31): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Enemy.cpp(194,61): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Enemy.cpp(200,112): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Enemy.cpp(200,24): warning C4244: 'initializing': conversion from 'T' to 'const int', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Enemy.cpp(201,103): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Enemy.cpp(201,28): warning C4244: 'initializing': conversion from 'T' to 'const int', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Enemy.cpp(202,110): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Enemy.cpp(202,29): warning C4244: 'initializing': conversion from 'T' to 'const int', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Enemy.cpp(208,31): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Enemy.cpp(212,61): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Enemy.cpp(212,45): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Enemy.cpp(213,86): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Enemy.cpp(218,61): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Enemy.cpp(224,106): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Enemy.cpp(224,24): warning C4244: 'initializing': conversion from 'T' to 'const int', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Enemy.cpp(225,101): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Enemy.cpp(225,26): warning C4244: 'initializing': conversion from 'T' to 'const int', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Enemy.cpp(226,109): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Enemy.cpp(226,28): warning C4244: 'initializing': conversion from 'T' to 'const int', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Enemy.cpp(232,26): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Enemy.cpp(235,61): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Enemy.cpp(235,45): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Enemy.cpp(236,26): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Enemy.cpp(241,61): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Enemy.cpp(247,112): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Enemy.cpp(247,24): warning C4244: 'initializing': conversion from 'T' to 'const int', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Enemy.cpp(248,101): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Enemy.cpp(248,26): warning C4244: 'initializing': conversion from 'T' to 'const int', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Enemy.cpp(249,109): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Enemy.cpp(249,28): warning C4244: 'initializing': conversion from 'T' to 'const int', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Enemy.cpp(255,26): warning C4244: 'argument': conversion from 'const int' to 'float', possible loss of data
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Enemy.cpp(259,61): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Enemy.cpp(259,45): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Enemy.cpp(260,35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\HaiDang\Enemy.cpp(265,61): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
   HaiDang.vcxproj -> C:\Users\toila\Documents\C++\Hai Dang\Hai-Dang\x64\Debug\HaiDang.exe
